@@ -1,0 +1,58 @@
+const { Joi } = require("../../../utils/schemaValidate");
+
+const updateSchema = Joi.object({
+  vUserId: Joi.string().required().label("User Id"),
+  vPlanId: Joi.string().label("Plan Id").allow(""),
+  vPaymentId: Joi.string().label("PaymentId").allow(""),
+  vName: Joi.string().label("Name").allow(""),
+  vEmail: Joi.string().label("Email").allow(""),
+  vMobile: Joi.string().label("Mobile").allow(""),
+  vLanguage: Joi.string().label("vLanguage"),
+  dtBirthDate: Joi.number().label("BirthDate").allow(""),
+  vGender: Joi.string().label("vGender").allow(""),
+  vAddress: Joi.string().label("vAddress").allow(""),
+  vHighestEducation: Joi.string().label("Highest Education").allow(""),
+  vDegree: Joi.string().label("Degree").allow(""),
+  vSpecisation: Joi.string().label("Specisation").allow(""),
+  vCollegeName: Joi.string().label("College Name").allow(""),
+  vEducationType: Joi.string().label("Education Type").allow(""),
+  vWorkExperience: Joi.string().label("Work Experience").allow(""),
+  objTotalYearsExperience: Joi.object().keys({
+    vYears: Joi.string().label("Years").allow(""),
+    vMonths: Joi.string().label("Months").allow(""),
+  }),
+  vJobTitle: Joi.string().label("Job Title").allow(""),
+  vDepartment: Joi.string().label("Department").allow(""),
+  vCategoryOrRole: Joi.string().label("CategoryOr Role").allow(""),
+  vCompanyName: Joi.string().label("Company Name").allow(""),
+  vContactPerson: Joi.string().label("Contact Person").allow(""),
+  vIndustryName: Joi.string().label("Industry Name").allow(""),
+  arrSkills: Joi.array().items(),
+  vCurrentlyWorking: Joi.string().label("Currently Working").allow(""),
+  dtStartDate: Joi.number().label("Start Date").allow(""),
+  iCurrentSalary: Joi.number().label("Current Salary"),
+  iExperationSalary: Joi.number().label("Experation Salary").allow(""),
+  vEmploymentType: Joi.string().label("Employment Type").allow(""),
+  vNoticePeriod: Joi.string().label("Notice Period").allow(""),
+  vEnglishSpeakLevel: Joi.string().label("English Speak Level").allow(""),
+  arrLanguagesSpeak: Joi.array().items(),
+  objPreferredWorkType: Joi.object().keys({
+    vPreferredEmploymentType: Joi.string()
+      .label("Preferred Employment Type")
+      .allow(""),
+    vPreferredWorkPlace: Joi.string().label("Preferred Work Place").allow(""),
+    vPreferredShift: Joi.string().label("Preferred Shift").allow(""),
+    arrPreferredCity: Joi.array().items(),
+  }),
+  vEstablishedYear: Joi.string().label("Established Year").allow(""),
+  vIndustryType: Joi.string().label("Industry Type").allow(""),
+  vPerksOrBenefits: Joi.string().label("Perks & Benefits").allow(""),
+  vInterviewAddress: Joi.string().label("Interview Address").allow(""),
+  vLatitude: Joi.string().label("Latitude").allow(""),
+  vLongitude: Joi.string().label("Longitude").allow(""),
+  iTotalEmployees: Joi.number().label("Total Employees").default(0),
+  iWalletBalance: Joi.number().label("Wallet Balance").default(0),
+  isCompany: Joi.boolean().label("Company").default(false),
+});
+
+module.exports = updateSchema;

@@ -1,5 +1,5 @@
 const dbService = require("../../utils/dbService");
-const admin = require("../../../firebase-config");
+const admin = require("../../firebase-config");
 
 const sendNotificationByTopic = async (entry) => {
   try {
